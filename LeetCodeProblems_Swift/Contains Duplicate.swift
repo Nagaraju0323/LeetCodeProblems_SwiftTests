@@ -5,10 +5,14 @@
 //  Created by Nagaraju on 22/12/23.
 //
 
-//MARK: - 217. Contains Duplicate
+
 
 import Foundation
 class Solution {
+    
+    
+    //MARK: - 217. Contains Duplicate
+    
     func containsDuplicate(_ nums: [Int]) -> Bool {
         
         var hashSet = Set<Int>()
@@ -21,12 +25,11 @@ class Solution {
         }
         return false
     }
-}
-
-
-//MARK: - 242. Valid Anagram
-
-class Agaram {
+    
+    
+    
+    //MARK: - 242. Valid Anagram
+    
     func isAnagram(_ s: String, _ t: String) -> Bool {
         
         if s.count != t.count { return false }
@@ -52,7 +55,13 @@ class Agaram {
         }
         return true
     }
+    
+    
 }
+
+
+
+
 
 
 

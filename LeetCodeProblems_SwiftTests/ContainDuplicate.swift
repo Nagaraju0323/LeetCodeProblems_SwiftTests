@@ -23,5 +23,13 @@ final class ContainDuplicate: XCTestCase {
         XCTAssertTrue(solution.containsDuplicate([-1,2,3,-1]),"Expected true with Negative for array with duplicate elements")
         
     }
+    
+    
+    func test_Agaram(){
+    
+        XCTAssertTrue(solution.isAnagram("agaram", "agaram"), "Expected True for agram values")
+        XCTAssertFalse(solution.isAnagram("agaram", "agaras"), "Expected false for agram values")
+        XCTAssertTrue(solution.isAnagram("", ""), "Epected Result is empty")
+    }
 
 }
