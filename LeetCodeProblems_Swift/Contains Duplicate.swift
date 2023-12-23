@@ -22,3 +22,37 @@ class Solution {
         return false
     }
 }
+
+
+//MARK: - 242. Valid Anagram
+
+class Agaram {
+    func isAnagram(_ s: String, _ t: String) -> Bool {
+        
+        if s.count != t.count { return false }
+        
+        if s.sorted() != t.sorted() { return false }
+        
+        var Sdict = [Int:Int]()
+        var Tdict = [Int:Int]()
+        
+        var sArr = Array(s)
+        var tArr = Array(t)
+        
+        for i in 0..<sArr.count {
+            Sdict[Int(sArr[i].asciiValue!),default: 0] += 1
+            Tdict[Int(tArr[i].asciiValue!),default: 0] += 1
+        }
+        
+        for (key,_) in Sdict {
+            
+            if Sdict[key] != Tdict[key] {
+                return false
+            }
+        }
+        return true
+    }
+}
+
+
+
