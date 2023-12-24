@@ -31,5 +31,14 @@ final class ContainDuplicate: XCTestCase {
         XCTAssertFalse(solution.isAnagram("agaram", "agaras"), "Expected false for agram values")
         XCTAssertTrue(solution.isAnagram("", ""), "Epected Result is empty")
     }
+    
+    func test_TwoSum() {
+        
+        XCTAssertEqual(solution.twoSum([2,7,9,11], 9),[0,1])
+        XCTAssertEqual(solution.twoSum([2,5,9,11], 9),[])
+        XCTAssertEqual(solution.twoSum([1, 2, 3, 4, 5], 5),[1,2])
+        
+        
+    }
 
 }

@@ -57,7 +57,27 @@ class Solution {
     }
     
     
+    //MARK: 1. Two Sum
+    
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+     
+        var hashdict = [Int:Int]()
+        
+        for (index,val) in nums.enumerated() {
+            
+            let diff = target - val
+            if let firstIndex = hashdict[diff] {
+                return [firstIndex,index]
+            }
+            hashdict[val] = index
+        }
+        return []
+    }
+    
+    
 }
+
+
 
 
 

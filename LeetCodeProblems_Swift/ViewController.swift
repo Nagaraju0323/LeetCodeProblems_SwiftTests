@@ -9,9 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let solution = Solution()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+      
+        let result = solution.twoSum([2,8,11,15], 9)
+        print(result)
+        
+        
     }
 
 
