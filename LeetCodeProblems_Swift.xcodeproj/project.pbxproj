@@ -149,6 +149,8 @@
 			dependencies = (
 			);
 			name = LeetCodeProblems_Swift;
+			packageProductDependencies = (
+			);
 			productName = LeetCodeProblems_Swift;
 			productReference = E6628F3B2B35F99B0012EECF /* LeetCodeProblems_Swift.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +223,8 @@
 				Base,
 			);
 			mainGroup = E6628F322B35F99B0012EECF;
+			packageReferences = (
+			);
 			productRefGroup = E6628F3C2B35F99B0012EECF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

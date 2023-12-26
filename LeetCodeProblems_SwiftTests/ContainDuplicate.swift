@@ -40,5 +40,12 @@ final class ContainDuplicate: XCTestCase {
         
         
     }
+    
+    func test_GroupAnagram() {
+        XCTAssertEqual(solution.groupAnagrams(["eat","tea","tan","ate","nat","bat"]),[["bat"],["eat","tea","ate"],["tan","nat"]])
+        XCTAssertEqual(solution.groupAnagrams([""]),[[""]])
+        XCTAssertEqual(solution.groupAnagrams(["a"]),[["a"]])
+        
+    }
 
 }

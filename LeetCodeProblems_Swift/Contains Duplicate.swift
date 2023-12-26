@@ -75,6 +75,25 @@ class Solution {
     }
     
     
+    //MARK: 49. Group Anagrams (Medium)
+    
+    
+    func groupAnagrams(_ strs: [String]) -> [[String]] {
+        
+        var hashDict:[String:[String]] = [:]
+        
+        
+        for str in strs {
+            let sort = String(str.sorted())
+            hashDict[sort,default: []].append(str)
+        }
+            
+        let result = Array(hashDict.values).sorted {
+            $0[0] < $1[0]
+        }
+        return result
+    }
+    
 }
 
 
