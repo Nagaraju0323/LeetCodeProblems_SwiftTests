@@ -47,5 +47,10 @@ final class ContainDuplicate: XCTestCase {
         XCTAssertEqual(solution.groupAnagrams(["a"]),[["a"]])
         
     }
+    
+    func test_topKFrequent() {
+        XCTAssertEqual(solution.topKFrequent([1,1,1,2,2,3],2),[1,2])
+        XCTAssertEqual(solution.topKFrequent([1],1),[1])
+    }
 
 }

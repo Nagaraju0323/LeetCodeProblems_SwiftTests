@@ -94,6 +94,22 @@ class Solution {
         return result
     }
     
+    //MARK: - Top K Frequent Elements - Medium
+    
+    func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
+    
+        var hashDict : [Int:Int] = [:]
+        
+        for num in nums {
+            hashDict[num,default: 0] += 1
+        }
+        
+        let result = Array(hashDict.keys.sorted {
+            hashDict[$0]! > hashDict[$1]!
+        }.prefix(k))
+        return result
+    }
+   
 }
 
 
