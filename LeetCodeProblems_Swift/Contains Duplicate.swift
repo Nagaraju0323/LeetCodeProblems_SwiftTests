@@ -134,7 +134,24 @@ class Solution {
        
     }
     
-   
+//MARK: - 128. Longest Consecutive Sequence
+    
+    func longestConsecutive(_ nums: [Int]) -> Int {
+     
+        var numSet = Set(nums)
+        var maxCount = 0
+        
+        for num in numSet where !numSet.contains(num - 1) {
+            var visitingNum = num + 1
+            var currentCount = 1
+            while(numSet.contains(visitingNum)) {
+                visitingNum += 1
+                currentCount += 1
+            }
+            maxCount = max(maxCount,currentCount)
+        }
+        return maxCount
+    }
 }
 
 

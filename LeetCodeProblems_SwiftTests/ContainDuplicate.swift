@@ -57,5 +57,10 @@ final class ContainDuplicate: XCTestCase {
         XCTAssertEqual(solution.productExceptSelf([1,2,3,4]),[24,12,8,6])
         XCTAssertEqual(solution.productExceptSelf([-1,1,0,-3,3]),[0,0,9,0,0])
     }
+   
+    func test_longestConsecutive() {
+        XCTAssertEqual(solution.longestConsecutive([100,4,200,1,3,2]),4)
+        XCTAssertEqual(solution.longestConsecutive([0,3,7,2,5,8,4,6,0,1]),9)
+    }
 
 }
