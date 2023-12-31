@@ -152,6 +152,21 @@ class Solution {
         }
         return maxCount
     }
+    
+    //MARK: - 128. String Polidrom or not
+    
+    func isPalindrome(_ s: String) -> Bool {
+
+            var allowCharecterSet = CharacterSet.alphanumerics
+        var strConverted = s.components(separatedBy: allowCharecterSet.inverted).joined(separator: "")
+           let reversedString = String(strConverted.reversed())
+         if strConverted.lowercased() != reversedString.lowercased() {
+             return false
+         }
+         return true
+
+
+        }
 }
 
 
