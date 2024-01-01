@@ -167,6 +167,26 @@ class Solution {
 
 
         }
+    
+    
+    //MARK: - 167. Two Sum II - Input Array Is Sorted
+    
+    func twoSums(_ numbers: [Int], _ target: Int) -> [Int] {
+     
+        var left = 0,right = numbers.count - 1
+        
+        while(left < right) {
+            var currentCount = numbers[left] + numbers[right]
+            if currentCount > target {
+                right -= 1
+            }else if currentCount < target {
+                left += 1
+            }else {
+                return [left + 1,right + 1]
+            }
+        }
+        return []
+    }
 }
 
 

@@ -67,5 +67,10 @@ final class ContainDuplicate: XCTestCase {
         XCTAssertEqual(solution.isPalindrome("race a car"),false)
         XCTAssertEqual(solution.isPalindrome(" "),true)
     }
+    
+    func test_TwoSumArrayIsSorted() {
+        XCTAssertEqual(solution.twoSums([2,7,11,15],9),[1,2])
+       
+    }
 
 }
