@@ -187,6 +187,18 @@ class Solution {
         }
         return []
     }
+    
+    //MARK: - 561. Array Partition
+    
+    func arrayPairSum(_ nums: [Int]) -> Int {
+        
+        var sortedLst = nums.sorted()
+        var sum  = 0
+        for i in stride(from:0,to: nums.count,by: 2) {
+            sum += sortedLst[i]
+        }
+        return sum
+    }
 }
 
 

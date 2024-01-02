@@ -72,5 +72,12 @@ final class ContainDuplicate: XCTestCase {
         XCTAssertEqual(solution.twoSums([2,7,11,15],9),[1,2])
        
     }
+    
+    func test_arrayPairSum() {
+        XCTAssertEqual(solution.arrayPairSum([1,4,3,2]),4)
+        XCTAssertEqual(solution.arrayPairSum([6,2,6,5,1,2]),9)
+        XCTAssertEqual(solution.arrayPairSum([]),0)
+       
+    }
 
 }
