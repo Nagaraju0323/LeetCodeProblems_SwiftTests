@@ -199,6 +199,25 @@ class Solution {
         }
         return sum
     }
+    
+    //MARK: Unique Number of Occurrences
+    func uniqueOccurrences(_ arr: [Int]) -> Bool {
+
+           var hashMap :[Int:Int] = [:]
+           for arrnum in arr {
+               hashMap[arrnum,default:0] += 1
+
+           }
+           var hashSet: Set<Int> = []
+           for(_,count) in hashMap {
+           if hashSet.contains(count) {
+               return false
+                  }else {
+               hashSet.insert(count)
+           }
+              }
+              return true
+       }
 }
 
 
