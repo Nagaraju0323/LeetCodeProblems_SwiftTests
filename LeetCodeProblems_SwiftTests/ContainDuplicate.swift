@@ -79,5 +79,11 @@ final class ContainDuplicate: XCTestCase {
         XCTAssertEqual(solution.arrayPairSum([]),0)
        
     }
+    
+    func test_LengthOfLongestSubstring() {
+           let input = "abcabcbb"
+           let expectedOutput = 3
+        XCTAssertEqual(solution.lengthOfLongestSubstring(input), expectedOutput, "The length of the longest substring should be 3 for input 'abcabcbb'")
+       }
 
 }

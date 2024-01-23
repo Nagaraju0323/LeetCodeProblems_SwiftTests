@@ -39,8 +39,8 @@ class Solution {
         var Sdict = [Int:Int]()
         var Tdict = [Int:Int]()
         
-        var sArr = Array(s)
-        var tArr = Array(t)
+        let sArr = Array(s)
+        let tArr = Array(t)
         
         for i in 0..<sArr.count {
             Sdict[Int(sArr[i].asciiValue!),default: 0] += 1
@@ -60,7 +60,7 @@ class Solution {
     //MARK: 1. Two Sum
     
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-     
+        
         var hashdict = [Int:Int]()
         
         for (index,val) in nums.enumerated() {
@@ -87,7 +87,7 @@ class Solution {
             let sort = String(str.sorted())
             hashDict[sort,default: []].append(str)
         }
-            
+        
         let result = Array(hashDict.values).sorted {
             $0[0] < $1[0]
         }
@@ -97,7 +97,7 @@ class Solution {
     //MARK: - Top K Frequent Elements - Medium
     
     func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
-    
+        
         var hashDict : [Int:Int] = [:]
         
         for num in nums {
@@ -129,15 +129,15 @@ class Solution {
             res[i] *= postfix
             postfix *= nums[i]
         }
-
+        
         return res
-       
+        
     }
     
-//MARK: - 128. Longest Consecutive Sequence
+    //MARK: - 128. Longest Consecutive Sequence
     
     func longestConsecutive(_ nums: [Int]) -> Int {
-     
+        
         var numSet = Set(nums)
         var maxCount = 0
         
@@ -156,23 +156,23 @@ class Solution {
     //MARK: - 128. String Polidrom or not
     
     func isPalindrome(_ s: String) -> Bool {
-
-            var allowCharecterSet = CharacterSet.alphanumerics
+        
+        var allowCharecterSet = CharacterSet.alphanumerics
         var strConverted = s.components(separatedBy: allowCharecterSet.inverted).joined(separator: "")
-           let reversedString = String(strConverted.reversed())
-         if strConverted.lowercased() != reversedString.lowercased() {
-             return false
-         }
-         return true
-
-
+        let reversedString = String(strConverted.reversed())
+        if strConverted.lowercased() != reversedString.lowercased() {
+            return false
         }
+        return true
+        
+        
+    }
     
     
     //MARK: - 167. Two Sum II - Input Array Is Sorted
     
     func twoSums(_ numbers: [Int], _ target: Int) -> [Int] {
-     
+        
         var left = 0,right = numbers.count - 1
         
         while(left < right) {
@@ -202,22 +202,42 @@ class Solution {
     
     //MARK: Unique Number of Occurrences
     func uniqueOccurrences(_ arr: [Int]) -> Bool {
-
-           var hashMap :[Int:Int] = [:]
-           for arrnum in arr {
-               hashMap[arrnum,default:0] += 1
-
-           }
-           var hashSet: Set<Int> = []
-           for(_,count) in hashMap {
-           if hashSet.contains(count) {
-               return false
-                  }else {
-               hashSet.insert(count)
-           }
-              }
-              return true
-       }
+        
+        var hashMap :[Int:Int] = [:]
+        for arrnum in arr {
+            hashMap[arrnum,default:0] += 1
+            
+        }
+        var hashSet: Set<Int> = []
+        for(_,count) in hashMap {
+            if hashSet.contains(count) {
+                return false
+            }else {
+                hashSet.insert(count)
+            }
+        }
+        return true
+    }
+    
+    //MARK: 3. Longest Substring Without Repeating Characters
+    
+    func lengthOfLongestSubstring(_ s: String) -> Int {
+        
+        var list = Array(s)
+        var charSet = Set<Character>()
+        var l = 0
+        var r = 0
+        var mv = 0
+        for r in 0..<s.count{
+            while charSet.contains(list[r]) {
+                charSet.remove(list[l])
+                l += 1
+            }
+            charSet.insert(list[r])
+            mv = max(mv, r - l + 1)
+        }
+        return mv
+    }
 }
 
 
